@@ -1,0 +1,129 @@
+
+R version 3.6.3 (2020-02-29) -- "Holding the Windsock"
+Copyright (C) 2020 The R Foundation for Statistical Computing
+Platform: x86_64-w64-mingw32/x64 (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+[Previously saved workspace restored]
+
+> A <- matrix (data = c (1,2,3,4),nrow=ncol = 2,byrow = TRUE
+Error: unexpected '=' in "A <- matrix (data = c (1,2,3,4),nrow=ncol ="
+>              A
+Error: object 'A' not found
+>              
+> A[-1,]
+Error: object 'A' not found
+> A[,-2]
+Error: object 'A' not found
+> 
+> N <- matrix(data = c (1:9),nrow = 3,ncol = 3,byrow = TRUE) 
+> 
+> which(N[ ,1] > 2)
+[1] 2 3
+> which(N[2, ] < 5)
+[1] 1
+> 
+> N[N >3] <- 2
+> N
+     [,1] [,2] [,3]
+[1,]    1    2    3
+[2,]    2    2    2
+[3,]    2    2    2
+> 
+> P <- matrix(c(1,2,3,4),nrow = 2,ncol = 2,byrow = TRUE)
+> Q <- matrix(c(4,6,2,7),nrow = 2,ncol = 2,byrow = TRUE)
+> P
+     [,1] [,2]
+[1,]    1    2
+[2,]    3    4
+> Q
+     [,1] [,2]
+[1,]    4    6
+[2,]    2    7
+> 
+> P+Q
+     [,1] [,2]
+[1,]    5    8
+[2,]    5   11
+> Q-P
+     [,1] [,2]
+[1,]    3    4
+[2,]   -1    3
+> 2*P
+     [,1] [,2]
+[1,]    2    4
+[2,]    6    8
+> R <- P / 3
+> R
+          [,1]      [,2]
+[1,] 0.3333333 0.6666667
+[2,] 1.0000000 1.3333333
+> S <- P %*% Q
+> S
+     [,1] [,2]
+[1,]    8   20
+[2,]   20   46
+> 
+> T <- cbind (P[,1], Q[,2])
+> T
+     [,1] [,2]
+[1,]    1    6
+[2,]    3    7
+> U <- rbind (P[1,], Q[2,])
+> U
+     [,1] [,2]
+[1,]    1    2
+[2,]    2    7
+> 
+> A <- matrix(c(1:4), 2, 2, TRUE)
+> b <- matrix(c(1:9), 3, 3, TRUE)
+> 
+> t(A)
+     [,1] [,2]
+[1,]    1    3
+[2,]    2    4
+> det (A)
+[1] -2
+> solve(A)
+     [,1] [,2]
+[1,] -2.0  1.0
+[2,]  1.5 -0.5
+> 
+> #exercise
+> Values <- 1:100
+> 
+> G <- matrix(values, 10, 10, TRUE)
+Error in matrix(values, 10, 10, TRUE) : object 'values' not found
+> G
+Error: object 'G' not found
+> 
+> H <- t(G)
+Error in t(G) : object 'G' not found
+> H
+Error: object 'H' not found
+> J <- G + H
+Error: object 'G' not found
+> J
+Error: object 'J' not found
+> det(G, H, J)
+Error in determinant(x, logarithm = TRUE, ...) : object 'G' not found
+> 
+> K ,- cbind(G[ ,1 :5], J[ , 1:5])
+Error: unexpected ',' in "K ,"
+> K
+Error: object 'K' not found
+> 
+> G %*% solve(G)
